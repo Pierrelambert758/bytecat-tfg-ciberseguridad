@@ -1,0 +1,39 @@
+<h2 class="mb-4">📦 Pedidos</h2>
+
+<table class="table table-dark table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Total</th>
+            <th>Pago</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for p in pedidos %}
+        <tr>
+            <td>{{ p[0] }}</td>
+
+            <td>
+                <strong>{{ p[1] }} {{ p[2] }}</strong>
+            </td>
+
+            <td>
+                <span class="text-success fw-bold">
+                    {{ p[3] }} €
+                </span>
+            </td>
+
+            <td style="color:red; font-weight:bold;">
+                {{ p[4] }}
+            </td>
+
+            <td class="text-secondary">
+                {{ p[5] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

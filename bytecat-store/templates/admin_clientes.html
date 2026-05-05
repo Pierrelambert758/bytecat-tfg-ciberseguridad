@@ -1,0 +1,21 @@
+<h2>Clientes registrados</h2>
+
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+    </tr>
+
+    {% for c in clientes %}
+    <tr>
+        <td>{{ c[0] }}</td>
+        <td>{{ c[1] }} {{ c[2] }}</td>
+        <td>{{ c[3] }}</td>
+        <td>{{ c[4] }}</td>
+        <td>{{ c[5] }}</td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre nosotros - ByteCat</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="admin-page">
+
+<div class="container mt-5 mb-5">
+
+    <div class="admin-header">
+        <div>
+            <h2>Sobre ByteCat Solutions S.L.</h2>
+            <p>Información corporativa interna expuesta por una mala configuración.</p>
+        </div>
+
+        <a href="{{ url_for('inicio') }}" class="btn btn-outline-light">Volver</a>
+    </div>
+
+    <div class="admin-card mt-4">
+        <h4>Información de la empresa</h4>
+
+        <p><strong>Razón social:</strong> ByteCat Solutions S.L.</p>
+        <p><strong>CIF:</strong> B45873219</p>
+        <p><strong>Domicilio:</strong> Calle Tecnológica nº 25, Valencia</p>
+        <p><strong>Dominio:</strong> bytecatsolutions.com</p>
+        <p><strong>Correo principal:</strong> info@bytecatsolutions.com</p>
+    </div>
+
+<!-- TODO IT: revisar /admin y credenciales temporales del usuario david.molina -->
+<!-- Servidor web laboratorio: 10.10.20.10 | Backup: 10.10.30.15 -->
+
+    <div class="admin-card mt-4">
+        <h4>Área técnica y operaciones</h4>
+
+        <p>
+            ByteCat Solutions cuenta con una pequeña infraestructura interna para dar soporte
+            a la tienda online, la gestión de pedidos y las copias de seguridad.
+        </p>
+
+        <ul class="technical-list">
+            <li><strong>Servidor principal:</strong> entorno web corporativo en Ubuntu Server.</li>
+            <li><strong>Backups:</strong> copia diaria automatizada en servidor secundario.</li>
+            <li><strong>Panel de gestión:</strong> acceso reservado para personal autorizado.</li>
+            <li><strong>Desarrollo externo:</strong> mantenimiento puntual realizado por proveedor técnico.</li>
+            <li><strong>Revisión pendiente:</strong> permisos temporales asociados a tareas de desarrollo.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
