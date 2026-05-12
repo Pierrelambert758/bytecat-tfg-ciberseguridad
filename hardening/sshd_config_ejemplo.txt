@@ -1,1 +1,7 @@
+Medidas aplicadas:
 
+PermitRootLogin no
+MaxAuthTries 3
+PasswordAuthentication yes
+
+En el laboratorio se mantiene autenticación por contraseña para evitar pérdida de acceso.
