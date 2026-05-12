@@ -26,3 +26,15 @@ Simular un entorno corporativo vulnerable, ejecutar ataques (Red Team) y detecta
 ## Nota
 
 Proyecto desarrollado en entorno controlado con fines educativos.
+
+
+- Introducción
+- Objetivos
+- Arquitectura
+- Tecnologías utilizadas
+- Diagrama de red
+- Capturas importantes
+- Ataques realizados
+- Medidas defensivas
+- Hardening
+- Lecciones aprendidas
