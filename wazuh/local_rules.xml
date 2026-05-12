@@ -1,1 +1,4 @@
-
+100001 - Acceso a .env
+100002 - Acceso a /config
+100003 - Acceso a /admin
+100004 - Acceso a login
