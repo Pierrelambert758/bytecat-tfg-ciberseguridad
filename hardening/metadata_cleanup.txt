@@ -1,1 +1,3 @@
+Eliminación de metadatos sensibles:
 
+exiftool -all= empleados_rrhh.pdf
