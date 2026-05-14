@@ -2,3 +2,25 @@
 100002 - Acceso a /config
 100003 - Acceso a /admin
 100004 - Acceso a login
+
+
+Regla para correlación de múltiples 404 sospechosos (enumeración)
+<rule id="100300" level="8">
+  <frequency>5</frequency>
+  <match>404</match>
+  <description>ByteCat - Enumeración de rutas (5 o más 404 en corto intervalo)</description>
+  <group>recon,web,bytecat,</group>
+  <mitre>
+    <id>T1592</id>
+  </mitre>
+</rule>
+
+Regla para exfiltración > 500 KB
+<rule id="100301" level="12">
+  <regex>scp.*\.zip|scp.*\.csv|scp.*\.sql</regex>
+  <description>ByteCat - Posible exfiltración de datos críticos</description>
+  <group>exfiltration,bytecat,</group>
+  <mitre>
+    <id>T1048</id>
+  </mitre>
+</rule>
